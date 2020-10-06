@@ -29,6 +29,7 @@ const useStyles = makeStyles({
     }
 });
 
+
 export default function ImageCard({example, checked}) {
   const classes = useStyles(
       
@@ -40,7 +41,7 @@ export default function ImageCard({example, checked}) {
         <CardMedia
           className={classes.media}
           image={example.imageURL}
-          title="Contemplative Reptile"
+          title={example.title}
         />
         <CardContent>
           <Typography gutterBottom component="h2" className={classes.title}>
