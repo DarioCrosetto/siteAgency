@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Collapse, IconButton, Toolbar } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
+  const aggettivi = ['Funzionale', 'Reattivo'];
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
   const [aggettivo, setAggettivo] = useState(0);
@@ -63,39 +64,37 @@ export default function Header() {
   const [lunghezza, setLength] = useState(aggettivi[aggettivo].length);
   const [agg_to_display, setDisplay] = useState('');
 
-  const aggettivi = ['Funzionale', 'Reattivo'];
-
-
-  const func_agg_to_display = () => {
+  const func_agg_to_display = useCallback(() => {
     if (dir === 1 && lunghezza >= aggettivi[aggettivo].length) {
       setDir(0);
-      setLength(lunghezza - 1);
+      setLength(prev => prev - 1);
     } else if (dir === 0 && lunghezza <= 0) {
       setDir(1);
       if (aggettivo >= aggettivi.length - 1) {
         setAggettivo(0);
       } else {
-          setAggettivo(aggettivo+1);
+          setAggettivo(prev  => prev +1);
       }
-      setLength(lunghezza + 1);
+      setLength(prev => prev + 1);
     } else if (dir === 0) {
-        setLength(lunghezza - 1);
+        setLength(prev => prev - 1);
     } else {
-        setLength(lunghezza + 1);
+        setLength(prev => prev + 1);
     }
     const b = aggettivi[aggettivo];
     setDisplay(b.substring(0, lunghezza));
-  }
+  }, [dir, lunghezza, aggettivi, aggettivo, setDir, setLength, setAggettivo, setDisplay]);
 
   useEffect(() => {
     setChecked(true);
   }, [setChecked]);
 
   useEffect(() => {
-    const myVar = () => setInterval(func_agg_to_display, 2000);
-    myVar();
-    return clearInterval(myVar);
-  }, [func_agg_to_display])
+    const myVar = setInterval(() => {
+        func_agg_to_display()
+    }, 1000);
+    return () => clearInterval(myVar);
+  }, [func_agg_to_display, setDisplay, aggettivi, aggettivo, lunghezza]);
 
   return (
     <div className={classes.root} id='header'>
