@@ -7,7 +7,7 @@ const siteExamples = [
 
     {
         title: 'Palestra Torino',
-        description: 'Allenarsi è importante, ma avere un sito che permetta le prenotazioni e che regola il flusso lo è ancora di più.',
+        description: 'Allenarsi è importante, ma avere un sito che permetta le prenotazioni e che regoli il flusso lo è ancora di più.',
         imageURL: process.env.PUBLIC_URL + '/assets/ScimmiePresentation.jpg',
     },
 ];
