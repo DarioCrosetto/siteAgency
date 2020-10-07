@@ -7,7 +7,7 @@ import Card from './components/Card';
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
 
 }));

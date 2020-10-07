@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   appbarWrapper: {
-    width: '80%',
+    width: '90%',
     margin: '0 auto',
   },
 
@@ -43,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: '#000000',
     fontSize: '3.7rem',
+    letterSpacing:'5px',
+
   },
 
   conteinerTitle: {
@@ -57,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   title_h: {
+    letterSpacing:'5px',
     color: '#000000',
   },
 
@@ -73,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const aggettivi = ['Funzionale', 'Reattivo', 'User Friendly'];
+  const aggettivi = ['Funzionale', 'Reattivo', 'Informativo', 'Interessante'];
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
   const [aggettivo, setAggettivo] = useState(0);
@@ -112,7 +115,7 @@ export default function Header() {
         //console.log("sto diminuendo e la lunghezza non è ancora 0")
         if(time >= 0){
             setLength(lunghezza-1);
-            setDisplay(aggettivi[aggettivo].substring(0, lunghezza));
+            setDisplay(aggettivi[aggettivo].substring(0, lunghezza) + "|");
             setTime(0)
         } else {
             setTime(prev => prev + 1)
