@@ -3,13 +3,13 @@ import { makeStyles } from'@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
 import Header from './components/Header';
 import Card from './components/Card';
+import Contact from './components/Contact';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
     backgroundColor: '#fff',
   },
-
 }));
 
 export default function App(){
@@ -19,6 +19,7 @@ export default function App(){
       <CssBaseline />
       <Header />
       <Card />
+      <Contact />
     </div>
   );
 }

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     color: '#000000',
-    fontSize: '3.7rem',
+    fontSize: '2.7rem',
     letterSpacing:'5px',
 
   },
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
   goDown: {
     color: '#DC143C',
-    fontSize: '4rem',
+    fontSize: '3.7rem',
   },
 
   title_h: {
@@ -65,18 +65,18 @@ const useStyles = makeStyles((theme) => ({
 
   aggettivo: {
     color: '#DC143C',
-    fontSize: '4.5rem',
+    fontSize: '4rem',
   },
 
   containerScroll:{
       textAlign: 'center',  
       justifyContent: 'center',
-    alignItems: 'center',
+      alignItems: 'center',
     },
 }));
 
 export default function Header() {
-  const aggettivi = ['Funzionale', 'Reattivo', 'Informativo', 'Interessante'];
+  const aggettivi = ['Funzionale', 'Reattivo', 'Informativo', 'Interessante', "Moderno", 'Intuitivo'];
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
   const [aggettivo, setAggettivo] = useState(0);
@@ -161,7 +161,7 @@ export default function Header() {
       <Collapse
         in={checked}
         {...(checked ? { timeout: 3000 } : {})}
-        collapsedHeight={50}>
+        collapsedHeight={0}>
         <div className={classes.conteinerTitle}>
           <h2 className={classes.title_h}>
             Benvenuto su U<span className={classes.colorText}>Site</span>

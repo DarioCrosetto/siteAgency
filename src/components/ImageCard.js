@@ -4,31 +4,44 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { Collapse } from '@material-ui/core';
+import { Button, CardActions, Collapse } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
     root: {
         maxWidth: 545,
         background: 'rgba(0,0,0,0.5)',
-        margin: '20px',
+        margin: '45px',
     },
     media: {
         height: 340,
+    },
+    card:{
+        background: '#f6f6f6',
+        textAlign: 'center',
+        alignContent: 'center',
     },
     title:{
         fontFamily:'Playfair',
         fontWeight: 'bold',
         fontSize: '2rem',
-        color: '#fff',
+        color: '#DC143C',
         letterSpacing:'4px',
-
+        textAlign: 'center',
     },
+
     description:{
         fontFamily:'Playfair',
         fontSize: '1.1rem',
-        color: '#fff',
-    }
+        color: '#000000',
+    },
+
+    button:{
+        color: '#DC143C',
+        backgroundColor: '#fff',
+        borderRadius: '4px',
+        margin: 'auto',
+    },
 });
 
 
@@ -45,7 +58,7 @@ export default function ImageCard({example, checked}) {
           image={example.imageURL}
           title={example.title}
         />
-        <CardContent>
+        <CardContent className={classes.card}> 
           <Typography gutterBottom component="h2" className={classes.title}>
             {example.title}
           </Typography>
@@ -53,6 +66,13 @@ export default function ImageCard({example, checked}) {
             {example.description}
           </Typography>
         </CardContent>
+        <CardActions className={classes.card}>
+            
+                <Button variant="outlined" color="secondary" className={classes.button}>
+                Scopri
+                </Button>
+           
+        </CardActions>
     </Card>
     </Collapse>
   );
