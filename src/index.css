@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root ul.control-dots .dot{
+  background-color: red;
+}
+
+
+
+#root div.carousel .control-next.control-arrow:before{
+  border-left-color: red;
+}
+
+#root div.carousel .control-prev.control-arrow:before{
+  border-right-color: red;
+}
+
+/*#root button.control-arrow.control-next::before{
+  background-color: red;
+}
+#root button.control-arrow.control-prev::before{
+  background-color: red;
+}*/
+
+p.carousel-status{
+  background-color: red;
+  display:none;
+}

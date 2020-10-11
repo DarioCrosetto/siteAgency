@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '& p.carousel-status': {  // ACCESSO AD ELEMENTO INTERNO AL COMPONENTE
+      
+  },
     [theme.breakpoints.down('md')]:{
         flexDirection: 'column',
     }
@@ -27,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]:{
         flexDirection: 'column',
     }
-
+  
   }
 
 }));
