@@ -44,26 +44,23 @@ const useStyles = makeStyles((theme) => ({
 export default function Home(){
 
   const classes = useStyles();
+  const home = () => {};
   const history = useHistory();
-  const handleOnClick = useCallback(() => history.goBack(), [history]);
+  const handleOnClick = useCallback(() => history.push('/contact/'), [history]);
 
   return (
     
       <AppBar className={classes.appbar} elevation={0}>
         <div className={classes.root}>
             <Toolbar className={classes.appbarWrapper}>
-            <IconButton onClick={handleOnClick}>
-                <h1 className={classes.appbarTitle}>
+                <h1 className={classes.appbarTitle} onClick={home}>
                 U<span className={classes.colorText}>Site</span>
                 </h1>
-            </IconButton>
-            
             <IconButton >
                 <SortIcon className={classes.icon} />
             </IconButton>
             </Toolbar>
         </div>
       </AppBar>
-   
   );
 }

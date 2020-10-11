@@ -25,7 +25,6 @@ export default function Card({ match }){
             Progetto {siteExamples[match.params.id].extendedDescription}
         </div>
       </div>
-    
   );
 }
 
