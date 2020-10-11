@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: '50px',
     '& p.carousel-status': {  // ACCESSO AD ELEMENTO INTERNO AL COMPONENTE
-      
   },
     [theme.breakpoints.down('md')]:{
         flexDirection: 'column',

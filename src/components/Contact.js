@@ -1,97 +1,77 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import Header from './Header'
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import { IconButton } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
+import { Grid, Button } from '@material-ui/core';
+import Footer from './Footer';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Form from './Form';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '200vh',
+      height: '100vh',
       fontFamily: 'Playfair',
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bgContatti.jpg'})`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '100% 52%',
+      backgroundSize: 'cover',
+    },
+    paper: {
+      padding: theme.spacing(2),
+      margin: 'auto',
+      maxWidth: 500,
+      background: 'rgba(255,255,255,0.5)',
+      
+    },
+    image: {
+      width: 128,
+      height: 128,
+    },
+    img: {
+      margin: 'auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
     },
     icon: {
       color: '#000000',
-      fontSize: '5rem',
+      fontSize: '4rem',
     },
-    concat: {
-      height:'70vh',
-      width: '35%',
-      background: '#fcfcfc',
-      borderColor: 'green',
-      border: '30px',
-      display: 'flex',
-      justifyContent: 'center',
-      borderRadius: '10px',
-      textAlign:'center',
-    },
-    form:{
-      display: 'flex',
-      flexWrap: 'wrap',
+    grid:{
+      backgroundColor: '#fff',
+      verticalAlign:'middle',
     }
 }));
 
-export default function Conact(){
+export default function Contact(){
 
   const classes = useStyles();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
+  const [loader, setLoader] = useState(false);
+
+  //onSubmit={handleSubmit}
   return (
     <div>
-      <Header />
-      <div  className={classes.root}>
-        <div className={classes.concat}>
-          <div>
-            <QuestionAnswerIcon className={classes.icon} />
-          </div>
+      <div className={classes.root}>
+        <Header />
+        <div>
+        <Paper className={classes.paper}>
+        <Form />
           
-          <form className={classes.form} noValidate autoComplete="off">
-            <TextField
-            id="outlined-uncontrolled"
-            label="Nome"
-            defaultValue="Mario"
-            variant="outlined"
-            margin="normal"
-          />
-          <TextField
-            id="outlined-uncontrolled"
-            label="Cognome"
-            defaultValue="Rossi"
-            variant="outlined"
-            margin="normal"
-          />
-          <TextField
-            id="outlined-uncontrolled"
-            label="Email"
-            defaultValue="mario.rossi@gmail.com"
-            variant="outlined"
-            margin="normal"
-          />
-          <TextField
-            id="outlined-uncontrolled"
-            label="Telefono"
-            defaultValue="0123456789"
-            variant="outlined"
-            margin="normal"
-          />
-          <TextField
-            id="outlined-uncontrolled"
-            style={{ margin: 8 }}
-            label="Messaggio"
-            defaultValue="Ciao, vi scrivo per un progetto che ho in mente per la mia attività..."
-            variant="outlined"
-            margin="normal"
-            fullWidth
-          />
-          </form>
-        </div>
+      </Paper>
       </div>
     </div>
+    </div>
+
+
+
+      
+
   );
 }
