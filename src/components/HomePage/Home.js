@@ -2,8 +2,8 @@ import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
 import HeaderHomePage from './HeaderHomePage';
-import Card from './Card';
-import WeDO from './WeDO';
+import Card from '../Card';
+import WeDO from '../WeDO';
 
 
 const useStyles = makeStyles((theme) => ({

@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
-import Home from './components/Home';
+import Home from './components/HomePage/Home';
 import Contact from './components/Contact';
 import Progetto from './components/Progetto';
 
