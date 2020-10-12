@@ -56,9 +56,10 @@ export default function MenuForSite(){
   const classes = useStyles();
   const history = useHistory();
   
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  const handleClick = (event) => {  
     setAnchorEl(event.currentTarget);
   };
 
@@ -72,7 +73,7 @@ export default function MenuForSite(){
   
   return (
       <div>
-        <IconButton >
+        <IconButton>
             <SortIcon className={classes.icon} onClick={handleClick}/>
         </IconButton>
         <StyledMenu

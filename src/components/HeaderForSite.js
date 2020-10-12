@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react'
 import { makeStyles  } from'@material-ui/core/styles'
-import { AppBar, Button, Collapse, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar } from '@material-ui/core';
+import useWindowSize from '../hook/useWindowSize'
 
-import MenuForSite from './MenuForSite'
-
+import MenuForSitePhone from './MenuForSitePhone'
+import MenuForSiteDesktop from './MenuForSiteDesktop'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
 export default function HeaderForSite(){
 
   const classes = useStyles();
+
+  const windowSize = useWindowSize();
+  const isDesktopWidth = windowSize > 750;
   
 
   return (
@@ -51,7 +55,10 @@ export default function HeaderForSite(){
                 <h1 className={classes.appbarTitle}>
                 U<span className={classes.colorText}>Site</span>
                 </h1>
-                <MenuForSite />
+                { isDesktopWidth 
+                    ? <MenuForSiteDesktop />
+                    : <MenuForSitePhone />
+                }
             </Toolbar>
         </div>
       </AppBar>
