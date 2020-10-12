@@ -1,29 +1,34 @@
 import React, { useEffect } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import siteExamples from '../static/siteExamples'
-import Header from './Header'
+import HeaderForSite from './HeaderForSite'
+import Footer from './Footer';
+
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
-    
+    display: 'flex',
+    justifyContent: 'left',
+    alignItems: 'center',
+    height: '100vh',
+    fontFamily: 'Playfair',
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   }
 }));
 
-export default function Card({ match }){
+export default function Progetto({ match }){
   const classes = useStyles();
-
-  useEffect(() => {
-      console.log(match.params.id)
-  }, []);
 
   return (
       <div>
-        <Header />
-        <div>
+        <HeaderForSite />
+        <div className={classes.root}>
             Progetto {siteExamples[match.params.id].extendedDescription}
         </div>
+        <Footer />
       </div>
   );
 }

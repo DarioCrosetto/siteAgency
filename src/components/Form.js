@@ -29,19 +29,10 @@ const useStyles = makeStyles((theme) => ({
     '& label.Mui-focused': {
         color: theme.palette.secondary.main,
     },
-    '& .MuiInput-underline:after': {
-        borderBottomColor: 'green',
-      },
       '& .MuiOutlinedInput-root': {
         '&.Mui-focused fieldset': {
           borderColor: theme.palette.secondary.main,
         },
-      },
-    
-    
-    '& input:valid + fieldset': {
-        borderColor: 'green',
-        borderWidth: 2,
       },
     },
   submit: {
@@ -99,6 +90,17 @@ export default function Form() {
                 label="Email"
                 name="email"
                 autoComplete="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="numero"
+                label="Numero di telefono"
+                name="numero"
+                autoComplete="numero"
               />
             </Grid>
             <Grid item xs={12}>

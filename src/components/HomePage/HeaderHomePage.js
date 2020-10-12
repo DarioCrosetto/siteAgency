@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Button, Collapse, IconButton, Toolbar } from '@material-ui/core';
-import SortIcon from '@material-ui/icons/Sort';
+import { Button, Collapse, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 import {useHistory} from 'react-router-dom';
+import HeaderForSite from '../HeaderForSite';
+
+
 
 
 
@@ -154,16 +156,7 @@ export default function HeaderHomePage() {
 
   return (
     <div className={classes.root} id='header'>
-      <AppBar className={classes.appbar} elevation={0}>
-        <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>
-            U<span className={classes.colorText}>Site</span>
-          </h1>
-          <IconButton>
-            <SortIcon className={classes.icon} />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      <HeaderForSite />
       <Collapse
         in={checked}
         {...(checked ? { timeout: 3000 } : {})}
@@ -196,6 +189,7 @@ export default function HeaderHomePage() {
           
           </div>
       </Collapse>
+      
     </div>
   );
 }

@@ -1,10 +1,8 @@
 import React, { useCallback } from 'react'
-import { makeStyles } from'@material-ui/core/styles'
-import {useHistory} from 'react-router-dom';
+import { makeStyles  } from'@material-ui/core/styles'
 import { AppBar, Button, Collapse, IconButton, Toolbar } from '@material-ui/core';
-import SortIcon from '@material-ui/icons/Sort';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import MenuForSite from './MenuForSite'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '8vh',
         fontFamily: 'Playfair',
-        background: '#f6f6f6',
       },
     
       appbar: {
@@ -33,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     
       icon: {
         color: '#000000',
-        fontSize: '2rem',
+        fontSize: '3rem',
       },
     
       colorText: {
@@ -41,24 +38,20 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-export default function Home(){
+export default function HeaderForSite(){
 
   const classes = useStyles();
-  const home = () => {};
-  const history = useHistory();
-  const handleOnClick = useCallback(() => history.push('/contact/'), [history]);
+  
 
   return (
     
       <AppBar className={classes.appbar} elevation={0}>
         <div className={classes.root}>
             <Toolbar className={classes.appbarWrapper}>
-                <h1 className={classes.appbarTitle} onClick={home}>
+                <h1 className={classes.appbarTitle}>
                 U<span className={classes.colorText}>Site</span>
                 </h1>
-            <IconButton >
-                <SortIcon className={classes.icon} />
-            </IconButton>
+                <MenuForSite />
             </Toolbar>
         </div>
       </AppBar>

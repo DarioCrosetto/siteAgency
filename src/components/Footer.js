@@ -1,75 +1,69 @@
 import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid';
-import { Paper, Button } from '@material-ui/core';
-
+import InstagramIcon from '@material-ui/icons/Instagram';
+import { Avatar, Grid } from '@material-ui/core';
 
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '35vh',
-    backgroundColor: '#f6f6f6',
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '20vh',
+    fontFamily: 'Playfair',
+    backgroundColor: '#f2f2f2'
+    
+  },
 
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+    fontSize: '4rem',
+    width: theme.spacing(7),
+    height: theme.spacing(7),
   },
-  gridContainer: {
-    margin: '50px',
-    alignItems: "center",
+
+  icon: {
+    fontSize: '3rem',
   },
-  mainfooter : {
-    color: 'white',
-    backgroundColor: '#dc3545',
-    paddingTop: '3em',
-    position: 'relative',
-    bottom: '0',
-    width: '100%'
+
+  appbarTitle: {
+    flexGrow: '1',
+    color: '#000000',
   },
+
+  
+
+  colorText: {
+    color: '#DC143C',
+  },
+  
 
 }));
 
 export default function Footer(){
   const classes = useStyles();
   return (
-    <div className={classes.mainfooter}>
-      <div className={classes.container}>
-        <div className={classes.row}>
-          {/* Column1 */}
-          <div className={classes.col}>
-            <h4>THICC MEMES INC</h4>
-            <h1 className="list-unstyled">
-              <li>342-420-6969</li>
-              <li>Moscow, Russia</li>
-              <li>123 Streeet South North</li>
-            </h1>
-          </div>
-          {/* Column2 */}
-          <div className={classes.col}>
-            <h4>Stuff</h4>
-            <ui className="list-unstyled">
-              <li>DANK MEMES</li>
-              <li>OTHER STUFF</li>
-              <li>GUD STUFF</li>
-            </ui>
-          </div>
-          {/* Column3 */}
-          <div className={classes.col}>
-            <h4>WELL ANOTHER COLUMN</h4>
-            <ui className="list-unstyled">
-              <li>DANK MEMES</li>
-              <li>OTHER STUFF</li>
-              <li>GUD STUFF</li>
-            </ui>
-          </div>
-        </div>
-        <hr />
-        <div className={classes.row}>
-          <p className="col-sm">
-            &copy;{new Date().getFullYear()} THICC MEMES | All rights reserved |
-            Terms Of Service | Privacy
-          </p>
-        </div>
-      </div>
+
+    <div className={classes.root}>
+        <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+            >
+            Vieni a scoprirci su Instagram
+            <Avatar className={classes.avatar} onClick={(e) => {
+            e.preventDefault();
+            window.location.href='https://www.instagram.com/scimmieontheroad/?hl=it';
+            }}> 
+                <InstagramIcon className={classes.icon}/>
+            </Avatar>
+            
+
+         </Grid>
+            
     </div>
   );
 }

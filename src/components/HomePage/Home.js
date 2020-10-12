@@ -4,6 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import HeaderHomePage from './HeaderHomePage';
 import Card from '../Card';
 import WeDO from '../WeDO';
+import Footer from '../Footer';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +22,7 @@ export default function Home(){
       <HeaderHomePage />
       <Card />
       <WeDO />
+      <Footer />
     </div>
   );
 }

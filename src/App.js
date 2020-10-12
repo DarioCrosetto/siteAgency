@@ -4,6 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import Home from './components/HomePage/Home';
 import Contact from './components/Contact';
 import Progetto from './components/Progetto';
+import Progetti from './components/Progetti';
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -24,6 +25,7 @@ export default function App(){
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
           <Route path="/projects/:id" component={Progetto} />
+          <Route path="/projects/" component={Progetti} />
           </Switch>
         </Router>
     </div>
