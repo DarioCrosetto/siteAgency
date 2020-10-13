@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
-import HeaderForSite from './HeaderForSite'
-import Footer from './Footer';
+import HeaderForSite from '../HeaderForSite'
+import Footer from '../Footer';
 import Paper from '@material-ui/core/Paper';
 import Form from './Form';
 

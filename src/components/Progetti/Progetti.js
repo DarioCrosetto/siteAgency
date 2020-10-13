@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
-import HeaderForSite from './HeaderForSite'
-import Footer from './Footer';
-import siteExamples from '../static/siteExamples'
-import ImageCard from './ImageCard'
+import HeaderForSite from '../HeaderForSite'
+import Footer from '../Footer';
+import siteExamples from '../../static/siteExamples'
+import ImageCard from '../ImageCard'
 
 const useStyles = makeStyles((theme) => ({
     root: {

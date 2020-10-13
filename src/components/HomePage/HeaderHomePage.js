@@ -6,11 +6,6 @@ import { Link as Scroll } from 'react-scroll';
 import {useHistory} from 'react-router-dom';
 import useWindowSize from '../../hook/useWindowSize'
 
-
-
-
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',

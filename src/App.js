@@ -2,10 +2,9 @@ import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
 import Home from './components/HomePage/Home';
-import Contact from './components/Contact';
-import Progetto from './components/Progetto';
-import Progetti from './components/Progetti';
-import HomePhone from './components/Phone/HomePhone'
+import Contact from './components/Contatti/Contact';
+import Progetto from './components/ProgettoSingolo/Progetto';
+import Progetti from './components/Progetti/Progetti';
 
 import useWindowSize from './hook/useWindowSize';
 

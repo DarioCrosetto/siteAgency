@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
-import siteExamples from '../static/siteExamples'
-import HeaderForSite from './HeaderForSite'
-import Footer from './Footer';
+import siteExamples from '../../static/siteExamples'
+import HeaderForSite from '../HeaderForSite'
+import Footer from '../Footer';
 import Gallery from "react-photo-gallery";
-import { photosTreTrulli } from "../static/photosTreTrulli";
+import { photosTreTrulli } from "../../static/photosTreTrulli";
 import { Grid, Paper } from '@material-ui/core';
 
 

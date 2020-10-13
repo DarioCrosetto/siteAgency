@@ -1,11 +1,11 @@
 import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
-import ImageCard from './ImageCard';
-import siteExamples from '../static/siteExamples'
-import useWindowPosition from '../hook/useWindowPosition';
+import ImageCard from '../ImageCard';
+import siteExamples from '../../static/siteExamples'
+import useWindowPosition from '../../hook/useWindowPosition';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import useWindowSize from '../hook/useWindowSize'
+import useWindowSize from '../../hook/useWindowSize'
 
 
 const useStyles = makeStyles((theme) => ({

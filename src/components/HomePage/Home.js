@@ -2,14 +2,11 @@ import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
 import HeaderHomePage from './HeaderHomePage';
-import WeDO from '../WeDO';
+import WeDO from './WeDO';
 import Footer from '../Footer';
-import CardDesktop from '../CardHome';
+import CardDesktop from './CardHome';
 import useWindowSize from '../../hook/useWindowSize';
 import HeaderForSite from '../HeaderForSite';
-
-
-
 
 
 const useStyles = makeStyles((theme) => ({
