@@ -4,8 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import HeaderHomePage from './HeaderHomePage';
 import WeDO from '../WeDO';
 import Footer from '../Footer';
-import CardDesktop from '../CardDesktop';
-import CardPhone from '../Phone/CardPhone';
+import CardDesktop from '../CardHome';
 import useWindowSize from '../../hook/useWindowSize';
 import HeaderForSite from '../HeaderForSite';
 
@@ -29,10 +28,7 @@ export default function Home(){
       <CssBaseline />
       <HeaderForSite />
       <HeaderHomePage />
-      { isDesktopWidth 
-                    ? <CardDesktop />
-                    : <CardPhone />
-                }
+      <CardDesktop />
       <WeDO />
       <Footer />
     </div>

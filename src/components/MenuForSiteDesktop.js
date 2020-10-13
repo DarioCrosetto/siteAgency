@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
-import InstagramIcon from '@material-ui/icons/Instagram';
 import { Avatar, Grid, Toolbar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 

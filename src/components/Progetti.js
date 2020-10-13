@@ -1,12 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import HeaderForSite from './HeaderForSite'
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import { Grid, Button } from '@material-ui/core';
 import Footer from './Footer';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Form from './Form';
 import siteExamples from '../static/siteExamples'
 import ImageCard from './ImageCard'
 
