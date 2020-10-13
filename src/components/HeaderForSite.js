@@ -3,25 +3,31 @@ import { makeStyles  } from'@material-ui/core/styles'
 import { AppBar, Toolbar } from '@material-ui/core';
 import useWindowSize from '../hook/useWindowSize'
 
-import MenuForSitePhone from './MenuForSitePhone'
+import MenuForSitePhone from './Phone/MenuForSitePhone'
 import MenuForSiteDesktop from './MenuForSiteDesktop'
+import { Link } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
-        justifyContent: 'left',
-        alignItems: 'center',
+        
         height: '8vh',
         fontFamily: 'Playfair',
+        backgroundColor: 'rgba(242, 242, 242,0.3)'
       },
     
       appbar: {
         background: 'none',
+        
       },
     
       appbarWrapper: {
-        width: '90%',
+        width: '100%',
         margin: '0 auto',
+        display: 'flex',                  /* establish flex container */
+        flexDirection: 'row',           /* default value; can be omitted */
+        flexWrap: 'nowrap',            /* default value; can be omitted */
+        justifyContent: 'space-between',
       },
     
       appbarTitle: {
@@ -37,6 +43,15 @@ const useStyles = makeStyles((theme) => ({
       colorText: {
         color: '#DC143C',
       },
+
+      toolbarLink: {
+        padding: theme.spacing(1),
+        flexShrink: 0,
+        color: '#000000',
+        fontFamily: 'Playfair',
+        textDecoration: 'none !important',
+        fontWeight: 'bold'
+    },
 }));
 
 export default function HeaderForSite(){
@@ -44,7 +59,7 @@ export default function HeaderForSite(){
   const classes = useStyles();
 
   const windowSize = useWindowSize();
-  const isDesktopWidth = windowSize > 750;
+  const isDesktopWidth = windowSize > 1300;
   
 
   return (
@@ -52,13 +67,23 @@ export default function HeaderForSite(){
       <AppBar className={classes.appbar} elevation={0}>
         <div className={classes.root}>
             <Toolbar className={classes.appbarWrapper}>
-                <h1 className={classes.appbarTitle}>
-                U<span className={classes.colorText}>Site</span>
-                </h1>
-                { isDesktopWidth 
-                    ? <MenuForSiteDesktop />
-                    : <MenuForSitePhone />
-                }
+              <div>
+              <Link
+                to="/" 
+                className={classes.toolbarLink}
+              > 
+              <h1 className={classes.appbarTitle}>
+              U<span className={classes.colorText}>Site</span>
+              </h1>
+              </ Link>
+              </ div>
+
+              <div className={classes.menucontainer}>
+              { isDesktopWidth 
+                  ? <MenuForSiteDesktop />
+                  : <MenuForSitePhone />
+              }
+              </div>
             </Toolbar>
         </div>
       </AppBar>

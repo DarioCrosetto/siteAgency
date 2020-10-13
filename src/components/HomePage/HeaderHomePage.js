@@ -4,7 +4,8 @@ import { Button, Collapse, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 import {useHistory} from 'react-router-dom';
-import HeaderForSite from '../HeaderForSite';
+import useWindowSize from '../../hook/useWindowSize'
+
 
 
 
@@ -20,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+  },
+
+  collapse:{
+    width:'50%'
   },
 
   appbar: {
@@ -152,21 +157,30 @@ export default function HeaderHomePage() {
     }, 30);
     return () => clearInterval(myVar);
   }, [dir, lunghezza, aggettivi, aggettivo, setDir, setLength, setAggettivo, setDisplay, func_agg_to_display]);
-
+  
+  const windowSize = useWindowSize();
+  const isDesktopWidth = windowSize > 850;
 
   return (
     <div className={classes.root} id='header'>
-      <HeaderForSite />
+      
       <Collapse
         in={checked}
         {...(checked ? { timeout: 3000 } : {})}
-        collapsedHeight={0}>
+        collapsedHeight={0}
+        className = {classes.collapse}>
         <div className={classes.conteinerTitle}>
           <h2 className={classes.title_h}>
             Benvenuto su U<span className={classes.colorText}>Site</span>
           </h2>
           <h1 className={classes.title}>
-            Vuoi elevare la tua attività <br /> con un sito <span className={classes.aggettivo}> {agg_to_display}</span>
+            Vuoi elevare la tua attività <br /> con un sito 
+            { isDesktopWidth 
+                    ? null
+                    : <br />
+                }
+            
+            <span className={classes.aggettivo}> {agg_to_display}</span>
           </h1>
           <h2 className={classes.colorText} >Sei nel posto giusto!</h2>
           

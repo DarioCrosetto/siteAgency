@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     root:{
         flexGrow: '1',
         color: '#000000',
-        fontFamily: 'Playfair',
     },
     
     toolbarSecondary: {
@@ -22,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     toolbarLink: {
         padding: theme.spacing(1),
         flexShrink: 0,
+        color: '#000000',
+        fontFamily: 'Playfair',
+        textDecoration: 'none !important',
+        fontWeight: 'bold'
     },
 
 }));

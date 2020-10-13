@@ -7,15 +7,18 @@ import Footer from './Footer';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Form from './Form';
-
+import siteExamples from '../static/siteExamples'
+import ImageCard from './ImageCard'
 
 const useStyles = makeStyles((theme) => ({
     root: {
+      minHeight: '100vh',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100vh',
-      fontFamily: 'Playfair',
+      [theme.breakpoints.down('md')]:{
+        flexDirection: 'column',
+    }
     },
     
 }));
@@ -28,7 +31,13 @@ export default function Progetti(){
     <div>
         <HeaderForSite />
       <div className={classes.root}>
-        Progetti
+          <ImageCard example={siteExamples[0]}/>
+          <ImageCard example={siteExamples[1]}/> 
+      </div>
+      <div className={classes.root}>
+                
+          <ImageCard example={siteExamples[2]}/>
+          <ImageCard example={siteExamples[1]}/>
       </div>
       <Footer />
     </div>

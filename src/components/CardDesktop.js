@@ -5,6 +5,8 @@ import siteExamples from '../static/siteExamples'
 import useWindowPosition from '../hook/useWindowPosition';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { Button, CardActions, Collapse} from '@material-ui/core';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +42,7 @@ export default function Card(){
   const checked = useWindowPosition('header');
   return (
     <div className={classes.root} id='examples'>
+      <Collapse in={checked} {...(checked ? {timeout: 1000} : {})}>
         <Carousel>
             <div className={classes.carousel}>
                 <ImageCard example={siteExamples[0]} checked={checked}/>
@@ -50,7 +53,7 @@ export default function Card(){
                 <ImageCard example={siteExamples[1]} checked={checked}/>
             </div>
         </Carousel>        
-
+      </Collapse>
     </div>
   );
 }

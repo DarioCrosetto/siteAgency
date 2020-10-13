@@ -46,7 +46,7 @@ const useStyles = makeStyles({
 });
 
 
-export default function ImageCard({example, checked}) {
+export default function ImageCard({example}) {
   const classes = useStyles(
       
   );
@@ -54,7 +54,7 @@ export default function ImageCard({example, checked}) {
   const handleOnClick = useCallback(() => history.push('/projects/' + example.id), [history]);
 
   return (
-      <Collapse in={checked} {...(checked ? {timeout: 1000} : {})}>
+      
     <Card className={classes.root}>
         <CardMedia
           className={classes.media}
@@ -77,6 +77,5 @@ export default function ImageCard({example, checked}) {
            
         </CardActions>
     </Card>
-    </Collapse>
   );
 }

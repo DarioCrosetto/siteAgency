@@ -12,7 +12,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: '20vh',
     fontFamily: 'Playfair',
-    backgroundColor: '#f2f2f2'
+    backgroundColor: '#f2f2f2',
+    fontWeight: 'bold'
+
     
   },
 
@@ -56,7 +58,7 @@ export default function Footer(){
             Vieni a scoprirci su Instagram
             <Avatar className={classes.avatar} onClick={(e) => {
             e.preventDefault();
-            window.location.href='https://www.instagram.com/scimmieontheroad/?hl=it';
+            window.location.href='https://www.instagram.com/usiteagency/?hl=it';
             }}> 
                 <InstagramIcon className={classes.icon}/>
             </Avatar>

@@ -1,15 +1,11 @@
 import React from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
-import HeaderHomePage from './HeaderHomePage';
 import WeDO from '../WeDO';
 import Footer from '../Footer';
-import CardDesktop from '../CardDesktop';
-import CardPhone from '../Phone/CardPhone';
+import CardPhone from './CardPhone';
 import useWindowSize from '../../hook/useWindowSize';
-import HeaderForSite from '../HeaderForSite';
-
-
+import HeaderForSite from '../HeaderForSite'
 
 
 
@@ -20,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home(){
+export default function HomePhone(){
   const classes = useStyles();
   const windowSize = useWindowSize();
   const isDesktopWidth = windowSize > 1300;
@@ -28,11 +24,7 @@ export default function Home(){
     <div className={classes.root}>
       <CssBaseline />
       <HeaderForSite />
-      <HeaderHomePage />
-      { isDesktopWidth 
-                    ? <CardDesktop />
-                    : <CardPhone />
-                }
+      
       <WeDO />
       <Footer />
     </div>
