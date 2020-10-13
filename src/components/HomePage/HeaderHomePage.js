@@ -163,7 +163,6 @@ export default function HeaderHomePage() {
 
   return (
     <div className={classes.root} id='header'>
-      
       <Collapse
         in={checked}
         {...(checked ? { timeout: 3000 } : {})}
@@ -193,8 +192,7 @@ export default function HeaderHomePage() {
         </div>
 
         <div className={classes.containerScroll}> 
-        
-
+      
           <Scroll to='examples' smooth='true'>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />

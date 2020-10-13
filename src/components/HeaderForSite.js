@@ -9,11 +9,10 @@ import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        
-        height: '8vh',
+   
+    rootToolbar: {   
         fontFamily: 'Playfair',
-        backgroundColor: 'rgba(242, 242, 242,0.3)'
+        height: '8vh',  
       },
     
       appbar: {
@@ -63,9 +62,8 @@ export default function HeaderForSite(){
   
 
   return (
-    
       <AppBar className={classes.appbar} elevation={0}>
-        <div className={classes.root}>
+        <div className={classes.rootToolbar}>
             <Toolbar className={classes.appbarWrapper}>
               <div>
               <Link

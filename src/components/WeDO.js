@@ -9,11 +9,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '70vh',
     backgroundColor: '#f6f6f6',
-    margin: '4%',
     fontFamily: 'Playfair',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    marginBottom: '4%'
   },
   title: {
     color: '#000000',
