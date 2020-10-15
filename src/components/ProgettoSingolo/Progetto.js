@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from'@material-ui/core/styles'
 import siteExamples from '../../static/siteExamples'
 import HeaderForSite from '../HeaderForSite'
 import Footer from '../Footer';
 import Gallery from "react-photo-gallery";
 import { photosTreTrulli } from "../../static/photosTreTrulli";
-import { Grid, Paper } from '@material-ui/core';
-
-
-
+import { Grid, Grow, Paper } from '@material-ui/core';
+import useWindowPosition from '../../hook/useWindowPosition';
+import { ContactSupportOutlined } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -16,84 +15,56 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: '100vh',
+    minHeight: '80vh',
     fontFamily: 'Playfair',
-    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/MetàSchermoScimmieOnTheRoad.jpg'})`,
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
+    backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-  },
-  conteinerTitle: {
-    width: '100%',
-    textAlign: 'right',
-    margin: '5%',
-  },
-  carousel:{
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    minHeight: '20vh',
-  },
-  colorText: {
-    color: '#DC143C',
-  },
-
-  title: {
-    color: '#000000',
-    fontSize: '2.7rem',
-    letterSpacing:'5px',
-
+    margin: '4%',
   },
 }));
 
 export default function Progetto({ match }){
   const classes = useStyles();
 
-  const photos = [
-    {
-      src: process.env.PUBLIC_URL + '/assets/ScimmiePresentation.jpg',
-      width: 4,
-      height: 3
-    },
-    {
-      src: process.env.PUBLIC_URL + '/assets/TreTrulliPresentation.jpg',
-      width: 1,
-      height: 1
-    }
-  ];
+  const [checkedCardZero, setCheckedCardZero] = useState(false);
+
+  const checkedCardOne = useWindowPosition('cardZero',0.4);
+  const checkedCardTwo = useWindowPosition('cardZero',1);
+  const checkedCardThree = useWindowPosition('cardZero',2);
+
+  useEffect(() => {
+    setCheckedCardZero(true);
+  }, [setCheckedCardZero]);
 
   return (
       <div>
         <HeaderForSite />
-        <div className={classes.root} id='root'>
-          <div className={classes.conteinerTitle}>
-            <h2 className={classes.title_h}>
-              Giovane, semplice, moderno.
-            </h2>
-            <h1 className={classes.title}>
-              ScimmmieOnTheRoad  
-            </h1>
-            <h2 className={classes.colorText} >Esplorare il mondo e condividere le esperienze</h2>
-            
-          </div>
+
+        <Grow in={checkedCardZero} {...(checkedCardZero ? { timeout: 2000 } : {})}>
+        <div className={classes.root} id='cardZero'>
         </div>
-      
-      <div>
-      <Grid
-        container
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-      >
+        </Grow>
 
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Gallery photos={photosTreTrulli} direction={"column"}/>;
-        </Grid>
+        <Grow in={checkedCardOne} {...(checkedCardOne ? { timeout: 2000 } : {})}>
+        <div className={classes.root}>
+        </div>
+        </Grow>
 
-        </Grid>
-      </div>
+        <Grow in={checkedCardTwo} {...(checkedCardTwo ? { timeout: 2000 } : {})}>
+        <div className={classes.root}>
+        </div>
+        </Grow>
+
+        <Grow in={checkedCardThree} {...(checkedCardThree ? { timeout: 2000 } : {})}>
+        <div className={classes.root}>
+        </div>
+        </Grow>
+
         <Footer />
       </div>
+
+
   );
 }
 

@@ -49,13 +49,14 @@ export default function Home(){
   return (
     <div className={classes.root}>
       <div className={classes.conteinerTitle}>
-          <h2 className={classes.title_h}>
-            Benvenuto su U<span className={classes.colorText}>Site</span>
+          <h3 >
+            Siamo qui per te!
+          </h3>
+          <h2 >
+            Usiamo la nostra competenza e professionalità per creare la pagina web <br />che hai sempre desiderato.<br />
+            Il nostro scopo è valorizzare la tua attività con la creazione di un sito <br />semplice, completo e personalizzato 
+            rispondendo alle tue esigenze.
           </h2>
-          <h1 className={classes.title}>
-            Vuoi elevare la tua attività <br /> con un sito
-          </h1>
-          <h2 className={classes.colorText} >Sei nel posto giusto!</h2>
           <Button variant="outlined" color="secondary" className={classes.button} onClick={handleOnClick}>
                 Contattaci
                 </Button>

@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Card(){
   const classes = useStyles();
-  const checked = useWindowPosition('header');
+  const checked = useWindowPosition('header',0.6);
   const windowSize = useWindowSize();
   const isDesktopWidth = windowSize > 1300;
   return (

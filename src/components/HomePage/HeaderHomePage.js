@@ -165,10 +165,10 @@ export default function HeaderHomePage() {
         className = {classes.collapse}>
         <div className={classes.conteinerTitle}>
           <h2 className={classes.title_h}>
-            Benvenuto su U<span className={classes.colorText}>Site</span>
+            Benvenuto su U<span className={classes.colorText}>Site</span>,
           </h2>
           <h1 className={classes.title}>
-            Vuoi elevare la tua attività <br /> con un sito 
+            Il posto giusto per creare<br /> il tuo sito 
             { isDesktopWidth 
                     ? null
                     : <br />
@@ -176,7 +176,7 @@ export default function HeaderHomePage() {
             
             <span className={classes.aggettivo}> {agg_to_display}</span>
           </h1>
-          <h2 className={classes.colorText} >Sei nel posto giusto!</h2>
+          <h2 className={classes.colorText} ></h2>
           
         </div>
 

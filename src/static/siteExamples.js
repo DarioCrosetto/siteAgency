@@ -3,7 +3,7 @@ const siteExamples = [
         id: '0',
         title: 'Ristorante Pugliese',
         extendedDescription: 'merda',
-        description: 'Splendido sito per un ristorante, braceria e b&b locato in Puglia. La voglia di fare, di aparire e di condividere è alla guida di questa piccola realtà. Nel sito è possibile prenotare una stanza nel B&B o un tavolo nel ristorante.',
+        description: "Un solo sito per tre attività diverse. Consulta il menù, prenota un tavolo o esplora le stanze dell'hotel. Tutto a portata di un click!",
         imageURL: process.env.PUBLIC_URL + '/assets/TreTrulliPresentation.jpg',
     },
 
@@ -11,7 +11,7 @@ const siteExamples = [
         id: '1',
         title: 'Blog di Viaggi',
         extendedDescription: 'stupendo',
-        description: 'I viaggi sono una parte fondamentale della nostra vita. Scoprire culture nuove e assaggiare sapori sconosciuti ci rendono migliori. Questo sito racconta tutto questo. Mappe, foto, articoli fanno vivere un viaggio attraverso il mondo.',
+        description: "Condividi i tuoi ricordi col mondo, un layout funzionale per viaggiare all'interno dei tuoi articoli preferiti. Consulta le mappe e scopri luoghi inesplorati",
         imageURL: process.env.PUBLIC_URL + '/assets/ScimmiePresentation.jpg',
     },
 

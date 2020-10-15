@@ -30,7 +30,7 @@ export default function App(){
           <Route path="/" exact component={Home} />    
           <Route path="/contact" component={Contact} />
           <Route path="/projects/:id" component={Progetto} />
-          <Route path="/projects/" component={Progetti} />
+          <Route path="/projects" component={Progetti} />
           </Switch>
         </Router>
     </div>

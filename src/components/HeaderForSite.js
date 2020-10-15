@@ -62,7 +62,7 @@ export default function HeaderForSite(){
   
 
   return (
-      <AppBar className={classes.appbar} elevation={0}>
+      <AppBar className={classes.appbar} elevation={0} id='headerSite'>
         <div className={classes.rootToolbar}>
             <Toolbar className={classes.appbarWrapper}>
               <div>
